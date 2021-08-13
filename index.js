@@ -155,12 +155,8 @@ function findById(movies, id) {
 function filterByGenre(movies, genre) {
   let arr = [];
   for (let movie of movies) {
-    let arr2 = movie.genre.split(",");
-    for (let item of arr2) {
-      console.log(item);
-      if (item === genre) {
-        arr.push(movie);
-      }
+    if (movie.genre.toLowerCase().includes(genre.toLowerCase())) {
+      arr.push(movie);
     }
   }
   return arr;
